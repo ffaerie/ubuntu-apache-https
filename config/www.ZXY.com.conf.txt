@@ -1,0 +1,6 @@
+<VirtualHost *:80>
+    ServerName www.ZXY.com
+    ServerAlias ZXY.com
+    # HTTP 自动跳转到 HTTPS
+    Redirect permanent / https://www.ZXY.com/
+</VirtualHost>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZXY的第一个HTTPS加密网页</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#eefbff",
+              100: "#d7f3ff",
+              200: "#afe7ff",
+              300: "#78d4ff",
+              400: "#35b9ff",
+              500: "#0b9df0",
+              600: "#007cc9",
+              700: "#0063a3",
+              800: "#075484",
+              900: "#0d476d"
+            }
+          },
+          keyframes: {
+            "fade-up": {
+              "0%": { opacity: "0", transform: "translateY(18px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            },
+            drift: {
+              "0%, 100%": { transform: "scale(1) translateY(0px)" },
+              "50%": { transform: "scale(1.02) translateY(-6px)" }
+            },
+            glow: {
+              "0%, 100%": { boxShadow: "0 0 0 rgba(11,157,240,0.0)" },
+              "50%": { boxShadow: "0 0 28px rgba(11,157,240,0.28)" }
+            }
+          },
+          animation: {
+            "fade-up": "fade-up 0.8s ease-out forwards",
+            drift: "drift 10s ease-in-out infinite",
+            glow: "glow 3.2s ease-in-out infinite"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 animate-drift bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.22),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(14,165,233,0.18),transparent_35%),linear-gradient(to_bottom,#020617,#0f172a)]"></div>
+
+    <header class="sticky top-0 z-20 border-b border-white/10 bg-slate-900/70 backdrop-blur-lg">
+      <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <h1 class="text-sm font-semibold tracking-[0.2em] text-brand-200 sm:text-base">
+          我的第一个HTTPS站点
+        </h1>
+      </nav>
+    </header>
+
+    <main class="mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-6xl items-center px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <section class="w-full rounded-3xl border border-white/15 bg-white/5 p-6 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl sm:p-10 lg:p-12 animate-fade-up">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="text-3xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+            ZXY的第一个 HTTPS 加密网页
+          </h2>
+          <p class="mt-5 text-base text-slate-200/90 sm:text-lg lg:text-xl">
+            基于 Ubuntu + Apache + SSL 搭建
+          </p>
+
+          <div class="mt-10 rounded-2xl border border-brand-200/25 bg-slate-900/55 p-6 text-left shadow-xl shadow-brand-900/30 animate-glow sm:p-8">
+            <h3 class="mb-5 text-lg font-semibold text-brand-100 sm:text-xl">网站介绍</h3>
+            <p class="text-sm leading-7 text-slate-200/90 sm:text-base">
+              这是我第一个配置 <span class="font-semibold text-brand-100">HTTPS</span> 的网站，完成了从部署到安全加固的整套流程。
+            </p>
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+                <p class="text-xs tracking-wide text-brand-200/90">传输加密</p>
+                <p class="mt-1 text-sm text-slate-100">HTTP 自动跳转 HTTPS</p>
+              </div>
+              <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+                <p class="text-xs tracking-wide text-brand-200/90">安全策略</p>
+                <p class="mt-1 text-sm text-slate-100">完成防火墙安全配置</p>
+              </div>
+              <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+                <p class="text-xs tracking-wide text-brand-200/90">域名访问</p>
+                <p class="mt-1 text-sm text-slate-100">自定义域名 www.ZXY.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 bg-slate-900/50">
+      <div class="mx-auto max-w-6xl px-4 py-5 text-center text-sm text-slate-300 sm:px-6 lg:px-8">
+        © 2026 ZXY
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

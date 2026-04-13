@@ -1,0 +1,21 @@
+<VirtualHost *:443>
+    ServerName www.ZXY.com
+    ServerAlias ZXY.com
+    DocumentRoot /var/www/www.ZXY.com/html
+
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/www.ZXY.com.crt
+    SSLCertificateKeyFile /etc/ssl/private/www.ZXY.com.key
+
+    SSLProtocol all -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+    SSLCipherSuite HIGH:!aNULL:!MD5
+
+    ErrorLog ${APACHE_LOG_DIR}/zxy_ssl_error.log
+    CustomLog ${APACHE_LOG_DIR}/zxy_ssl_access.log combined
+
+    <Directory /var/www/www.ZXY.com/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
